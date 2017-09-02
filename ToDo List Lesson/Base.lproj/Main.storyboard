@@ -40,10 +40,51 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="c09-cY-WtF" kind="show" id="JWR-zI-ocN"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q6D-Ia-w1X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-174" y="-459"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="3Iu-QL-QhJ">
+            <objects>
+                <viewController id="c09-cY-WtF" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WA7-ru-LUN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8G-4e-XKO">
+                                <rect key="frame" x="10" y="78" width="394" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XH7-ea-bA5">
+                                <rect key="frame" x="10" y="140" width="394" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Mark Completed"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="o8G-4e-XKO" firstAttribute="leading" secondItem="KVh-bv-cBk" secondAttribute="leading" constant="10" id="3nG-GQ-wbv"/>
+                            <constraint firstItem="o8G-4e-XKO" firstAttribute="top" secondItem="KVh-bv-cBk" secondAttribute="top" constant="14" id="5XT-bc-RNQ"/>
+                            <constraint firstItem="XH7-ea-bA5" firstAttribute="leading" secondItem="KVh-bv-cBk" secondAttribute="leading" constant="10" id="Cgu-kf-g8W"/>
+                            <constraint firstItem="XH7-ea-bA5" firstAttribute="centerX" secondItem="WA7-ru-LUN" secondAttribute="centerX" id="LK4-Wz-eBD"/>
+                            <constraint firstItem="KVh-bv-cBk" firstAttribute="trailing" secondItem="XH7-ea-bA5" secondAttribute="trailing" constant="10" id="NDO-u3-6ju"/>
+                            <constraint firstItem="XH7-ea-bA5" firstAttribute="top" secondItem="o8G-4e-XKO" secondAttribute="bottom" constant="39" id="XgQ-A4-IVw"/>
+                            <constraint firstItem="KVh-bv-cBk" firstAttribute="trailing" secondItem="o8G-4e-XKO" secondAttribute="trailing" constant="10" id="edO-zO-bCc"/>
+                            <constraint firstItem="o8G-4e-XKO" firstAttribute="centerX" secondItem="WA7-ru-LUN" secondAttribute="centerX" id="i7i-d3-N7P"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KVh-bv-cBk"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5ES-Wi-ngj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-175" y="262"/>
         </scene>
         <!--Add Page View Controller-->
         <scene sceneID="73x-vt-ohj">
@@ -75,8 +116,8 @@
                                 <rect key="frame" x="182.66666666666666" y="171" width="51" height="31"/>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vFZ-yc-Bej">
-                                <rect key="frame" x="177" y="221" width="60" height="53"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <rect key="frame" x="176" y="221" width="62" height="54"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <state key="normal" title="Add"/>
                                 <connections>
                                     <action selector="AddButtonWasTapped:" destination="1Wd-dF-8Dw" eventType="touchUpInside" id="KhF-6n-wvs"/>
