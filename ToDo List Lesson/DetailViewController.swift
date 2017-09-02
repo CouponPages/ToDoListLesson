@@ -10,12 +10,22 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    var myPreviousVC = ToDoListTableViewController()
+    var selectedToDo = ToDoClass()
+
+    @IBOutlet weak var DescriptionLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        DescriptionLabel.text = selectedToDo.Name
         // Do any additional setup after loading the view.
     }
 
+    
+    
+    @IBOutlet weak var MarkCompletedButtonTapped: UIButton!
+    
+    @IBAction func CompletButtonTapped(_ sender: Any) {
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -66,6 +66,9 @@
                                 <rect key="frame" x="10" y="140" width="394" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Mark Completed"/>
+                                <connections>
+                                    <action selector="CompletButtonTapped:" destination="c09-cY-WtF" eventType="touchUpInside" id="HcW-Qw-k3u"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -81,6 +84,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KVh-bv-cBk"/>
                     </view>
+                    <connections>
+                        <outlet property="DescriptionLabel" destination="o8G-4e-XKO" id="CT4-0X-snM"/>
+                        <outlet property="MarkCompletedButtonTapped" destination="XH7-ea-bA5" id="kSo-BL-F5t"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ES-Wi-ngj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -63,7 +63,13 @@ class ToDoListTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let addVC = segue.destination as? AddPageViewController{
             addVC.myPreviousVC = self
-
+        }
+        if let completeVC = segue.destination as? DetailViewController{
+            if let ThisItem = sender as? ToDoClass{
+                completeVC.selectedToDo = ThisItem
+                completeVC.myPreviousVC = self
+            }
+            
         }
         
     }
