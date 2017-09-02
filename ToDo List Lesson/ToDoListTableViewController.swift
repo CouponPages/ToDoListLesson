@@ -10,42 +10,51 @@ import UIKit
 
 class ToDoListTableViewController: UITableViewController {
 
+    var toDoList : [ToDoClass] = []
+    
+    func CreateToDos() -> [ToDoClass]
+    {
+        let item1 = ToDoClass()
+        let item2 = ToDoClass()
+        let item3 = ToDoClass()
+        item1.Name = "Buy Eggs"
+        item2.Name = "Finish Class"
+        item2.IsImportant = true
+        item3.Name = "Buy Cheese"
+        
+        return [item1, item2, item3]
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        toDoList = CreateToDos()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        // #return the number of rows
+        return toDoList.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath)
+        let toDoItem = toDoList[indexPath.row]
 
+        if toDoItem.IsImportant
+        {
+            cell.textLabel?.text = "❗️" + toDoItem.Name
+        }
+        else{
+            cell.textLabel?.text = toDoItem.Name
+        }
+        
         return cell
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.
@@ -90,6 +99,23 @@ class ToDoListTableViewController: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
-
+     */
+    
+    
+    /*
+    //
+    // NOTE: Nick asked to delete this... keeping it for reference
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    //
+    // NOTE: Nick asked to delete this... keeping it for reference
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+     */
 }
