@@ -10,7 +10,7 @@ import UIKit
 
 class AddPageViewController: UIViewController {
 
-    
+    var myPreviousVC = ToDoListTableViewController()
     
     @IBOutlet weak var TitleTextBox: UITextField!
     
@@ -25,7 +25,13 @@ class AddPageViewController: UIViewController {
     
     @IBAction func AddButtonWasTapped(_ sender: Any) {
         
+        let MyTodo = ToDoClass()
+        MyTodo.IsImportant = IsImportantToggle.isOn
+        MyTodo.Name = TitleTextBox.text!
         
+        myPreviousVC.toDoList.append(MyTodo)
+        myPreviousVC.tableView.reloadData()
+        navigationController?.popViewController(animated: true)
     }
     
     /*
