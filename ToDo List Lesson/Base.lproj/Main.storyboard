@@ -41,17 +41,17 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="c09-cY-WtF" kind="show" id="JWR-zI-ocN"/>
+                        <segue destination="c09-cY-WtF" kind="show" identifier="MovetoDetailPage" id="JWR-zI-ocN"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q6D-Ia-w1X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-174" y="-459"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="3Iu-QL-QhJ">
             <objects>
-                <viewController id="c09-cY-WtF" sceneMemberID="viewController">
+                <viewController id="c09-cY-WtF" customClass="DetailViewController" customModule="ToDo_List_Lesson" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WA7-ru-LUN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

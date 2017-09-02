@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D80DA8971F5B1EE2007618B7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80DA8961F5B1EE2007618B7 /* DetailViewController.swift */; };
 		D8D666D21F5ACB2F00D624C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D666D11F5ACB2F00D624C7 /* AppDelegate.swift */; };
 		D8D666D71F5ACB2F00D624C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8D666D51F5ACB2F00D624C7 /* Main.storyboard */; };
 		D8D666DA1F5ACB2F00D624C7 /* ToDo_List_Lesson.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8D666D81F5ACB2F00D624C7 /* ToDo_List_Lesson.xcdatamodeld */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D80DA8961F5B1EE2007618B7 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D8D666CE1F5ACB2F00D624C7 /* ToDo List Lesson.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ToDo List Lesson.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8D666D11F5ACB2F00D624C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8D666D61F5ACB2F00D624C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				D8D666E61F5ACF3600D624C7 /* ToDoListTableViewController.swift */,
 				D8D666EA1F5AE07D00D624C7 /* AddPageViewController.swift */,
 				D8D666E81F5ACFAA00D624C7 /* ToDoItem.swift */,
+				D80DA8961F5B1EE2007618B7 /* DetailViewController.swift */,
 				D8D666DB1F5ACB2F00D624C7 /* Assets.xcassets */,
 				D8D666D51F5ACB2F00D624C7 /* Main.storyboard */,
 				D8D666DD1F5ACB2F00D624C7 /* LaunchScreen.storyboard */,
@@ -148,6 +151,7 @@
 				D8D666DA1F5ACB2F00D624C7 /* ToDo_List_Lesson.xcdatamodeld in Sources */,
 				D8D666D21F5ACB2F00D624C7 /* AppDelegate.swift in Sources */,
 				D8D666EB1F5AE07D00D624C7 /* AddPageViewController.swift in Sources */,
+				D80DA8971F5B1EE2007618B7 /* DetailViewController.swift in Sources */,
 				D8D666E91F5ACFAA00D624C7 /* ToDoItem.swift in Sources */,
 				D8D666E71F5ACF3600D624C7 /* ToDoListTableViewController.swift in Sources */,
 			);

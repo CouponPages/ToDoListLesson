@@ -55,11 +55,17 @@ class ToDoListTableViewController: UITableViewController {
         return cell
     }
  
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let toDoItem = toDoList[indexPath.row]
+        performSegue(withIdentifier: "MovetoDetailPage", sender: toDoItem)
+    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let addVC = segue.destination as! AddPageViewController
-        addVC.myPreviousVC = self
-    
+        if let addVC = segue.destination as? AddPageViewController{
+            addVC.myPreviousVC = self
+
+        }
+        
     }
     
     /*
