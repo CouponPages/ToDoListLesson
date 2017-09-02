@@ -27,11 +27,16 @@ class AddPageViewController: UIViewController {
         
         let MyTodo = ToDoClass()
         MyTodo.IsImportant = IsImportantToggle.isOn
-        MyTodo.Name = TitleTextBox.text!
+        if let NewTitle = TitleTextBox.text {
+            if NewTitle != "" {
+                MyTodo.Name = NewTitle
+                myPreviousVC.toDoList.append(MyTodo)
+                myPreviousVC.tableView.reloadData()
+                navigationController?.popViewController(animated: true)
+
+            }
+        }
         
-        myPreviousVC.toDoList.append(MyTodo)
-        myPreviousVC.tableView.reloadData()
-        navigationController?.popViewController(animated: true)
     }
     
     /*
