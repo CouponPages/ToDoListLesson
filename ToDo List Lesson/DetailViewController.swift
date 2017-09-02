@@ -25,6 +25,14 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var MarkCompletedButtonTapped: UIButton!
     
     @IBAction func CompletButtonTapped(_ sender: Any) {
+        var Position = 0
+        for ThisTodo in myPreviousVC.toDoList{
+            if ThisTodo.Name == selectedToDo.Name{
+                print("found it \(ThisTodo.Name)")
+            }
+            Position += 1
+        }
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
