@@ -45,10 +45,10 @@
             </objects>
             <point key="canvasLocation" x="-174" y="-459"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Page View Controller-->
         <scene sceneID="73x-vt-ohj">
             <objects>
-                <viewController id="1Wd-dF-8Dw" sceneMemberID="viewController">
+                <viewController id="1Wd-dF-8Dw" customClass="AddPageViewController" customModule="ToDo_List_Lesson" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Dd-go-N95">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -78,6 +78,9 @@
                                 <rect key="frame" x="177" y="221" width="60" height="53"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="AddButtonWasTapped:" destination="1Wd-dF-8Dw" eventType="touchUpInside" id="KhF-6n-wvs"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -101,6 +104,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eae-db-usu"/>
                     </view>
+                    <connections>
+                        <outlet property="IsImportantToggle" destination="Hds-Vs-txi" id="NiY-y7-wYZ"/>
+                        <outlet property="TitleTextBox" destination="u9g-Yg-Cwe" id="MUv-nk-hyP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GBL-Ng-QDy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
