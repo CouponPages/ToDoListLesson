@@ -28,7 +28,10 @@ class DetailViewController: UIViewController {
         var Position = 0
         for ThisTodo in myPreviousVC.toDoList{
             if ThisTodo.Name == selectedToDo.Name{
-                print("found it \(ThisTodo.Name)")
+                myPreviousVC.toDoList.remove(at: Position)
+                myPreviousVC.tableView.reloadData()
+                navigationController?.popViewController(animated: true)
+                break  // probably ignored?
             }
             Position += 1
         }
