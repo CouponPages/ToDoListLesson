@@ -11,12 +11,12 @@ import UIKit
 class DetailViewController: UIViewController {
     
     var myPreviousVC = ToDoListTableViewController()
-    var selectedToDo = ToDoClass()
+    var selectedToDo : ToDoCoreData?
     
     @IBOutlet weak var DescriptionLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        DescriptionLabel.text = selectedToDo.Name
+        DescriptionLabel.text = selectedToDo?.name
         // Do any additional setup after loading the view.
     }
     
@@ -25,15 +25,14 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var MarkCompletedButtonTapped: UIButton!
     
     @IBAction func CompletButtonTapped(_ sender: Any) {
-        var Position = 0
-        for ThisTodo in myPreviousVC.toDoList{
-            if ThisTodo.name == selectedToDo.Name{
-                myPreviousVC.toDoList.remove(at: Position)
-                myPreviousVC.tableView.reloadData()
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext{
+            if let theSelectedToDo = selectedToDo {
+                context.delete(theSelectedToDo)
+                try? context.save() 
                 navigationController?.popViewController(animated: true)
-                break  // probably ignored?
             }
-            Position += 1
+        
+        
         }
         
     }

@@ -83,7 +83,7 @@ class ToDoListTableViewController: UITableViewController {
             addVC.myPreviousVC = self
         }
         if let completeVC = segue.destination as? DetailViewController{
-            if let ThisItem = sender as? ToDoClass{
+            if let ThisItem = sender as? ToDoCoreData{
                 completeVC.selectedToDo = ThisItem
                 completeVC.myPreviousVC = self
             }
