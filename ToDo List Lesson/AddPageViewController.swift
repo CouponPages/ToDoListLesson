@@ -24,7 +24,24 @@ class AddPageViewController: UIViewController {
     
     
     @IBAction func AddButtonWasTapped(_ sender: Any) {
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext{
+            let toDo = ToDoCoreData(entity: ToDoCoreData.entity(), insertInto: context)
+
+            if let NewTitle = TitleTextBox.text {
+                if NewTitle != "" {
+                    toDo.isImportant = IsImportantToggle.isOn
+                    toDo.name = NewTitle
+                    // myPreviousVC.tableView.reloadData()
+                    navigationController?.popViewController(animated: true)
+                    
+                }
+            try? context.save()
+            
+            }
+        }
         
+        
+        /*
         let MyTodo = ToDoClass()
         MyTodo.IsImportant = IsImportantToggle.isOn
         if let NewTitle = TitleTextBox.text {
@@ -36,6 +53,7 @@ class AddPageViewController: UIViewController {
 
             }
         }
+        */
         
     }
     

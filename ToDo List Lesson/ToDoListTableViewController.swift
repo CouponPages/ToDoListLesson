@@ -10,7 +10,7 @@ import UIKit
 
 class ToDoListTableViewController: UITableViewController {
 
-    var toDoList : [ToDoClass] = []
+    var toDoList : [ToDoCoreData] = []
     
     func CreateToDos() -> [ToDoClass]
     {
@@ -26,12 +26,30 @@ class ToDoListTableViewController: UITableViewController {
     }
     
     
+    func getToDos(){
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext{
+            // ToDoCoreData.fetchRequest()
+            
+            if let coreDataTodos = try? context.fetch(ToDoCoreData.fetchRequest()) as? [ToDoCoreData]{
+                if let theToDos = coreDataTodos {
+                    toDoList = theToDos
+                    tableView.reloadData()
+                }
+            }
+        }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        toDoList = CreateToDos()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        // toDoList = CreateToDos()
+        getToDos()
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #return the number of rows
         return toDoList.count
@@ -44,12 +62,12 @@ class ToDoListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath)
         let toDoItem = toDoList[indexPath.row]
 
-        if toDoItem.IsImportant
+        if toDoItem.isImportant
         {
-            cell.textLabel?.text = "❗️" + toDoItem.Name
+            cell.textLabel?.text = "❗️" + toDoItem.name!
         }
         else{
-            cell.textLabel?.text = toDoItem.Name
+            cell.textLabel?.text = toDoItem.name
         }
         
         return cell
